@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { userAtom } from "../atoms";
-
+import Image from "next/image";
+import logo from "../../public/Images/logo/logo.png";
 export default function Header() {
   const router = useRouter();
   const [userEmail,setUserEmail]=useRecoilState(userAtom);
@@ -25,8 +26,9 @@ export default function Header() {
   return (
     <header className="px-4 lg:px-6 h-16 flex items-center bg-sky-500 text-white">
       <Link className="flex items-center justify-center" href="#">
-        <PlaneTakeoff className="h-8 w-8 mr-2" />
-        <span className="text-xl font-bold">SkyBooker</span>
+      <Image src={logo} alt="logo" width={50} height={50} />
+      
+        <span className="text-xl font-bold">Sparrow Airlines</span>
       </Link>
       <nav className="ml-auto flex items-center gap-4 sm:gap-6">
         <Link

@@ -46,6 +46,7 @@ export function Landing() {
       icon: <MapPin className="h-8 w-8 text-red-500" />,
       image: NewYorkImage,
     },
+    
   ];
   return (
     <div className="flex flex-col min-h-screen bg-sky-50">
@@ -55,12 +56,10 @@ export function Landing() {
             <div className="flex flex-col items-center space-y-4 text-center text-white">
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
-                  Your Journey Begins with SkyBooker
+                Bay cùng cảm xúc, đến cùng niềm vui
                 </h1>
                 <p className="mx-auto max-w-[700px] text-xl md:text-2xl text-sky-100">
-                  Discover amazing deals on flights to destinations worldwide.
-                  Easy booking, great prices, and unforgettable adventures
-                  await!
+                 Tự tin khám phá thế giới với những chuyến bay thuận tiện, giá cả hợp lý của  Sparrow Airlines
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
@@ -75,7 +74,7 @@ export function Landing() {
                     onClick={searchHandler}
                     className="bg-orange-500 hover:bg-orange-600 text-white"
                   >
-                    Search Flights
+                     Tìm kiếm chuyến bay
                   </Button>
                 </form>
               </div>
@@ -85,17 +84,17 @@ export function Landing() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-sky-800">
-              Why Fly with SkyBooker?
+               Tại sao Sparrow Airlines là lựa chọn hàng đầu của bạn?
             </h2>
             <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
               <Card className="bg-yellow-100 border-yellow-200 hover:scale-105 hover:shadow-lg transition-transform duration-300">
                 <CardContent className="flex flex-col items-center space-y-2 p-6">
                   <Search className="h-12 w-12 mb-2 text-yellow-600" />
                   <h3 className="text-xl font-bold text-yellow-800">
-                    Easy Search
+                     Tìm kiếm dễ dàng
                   </h3>
                   <p className="text-sm text-yellow-700 text-center">
-                    Find the perfect flight with our powerful search tools.
+                     Tìm kiếm chuyến bay đến mọi nơi một cách nhanh chóng và dễ dàng.
                   </p>
                 </CardContent>
               </Card>
@@ -104,11 +103,10 @@ export function Landing() {
                 <CardContent className="flex flex-col items-center space-y-2 p-6">
                   <Calendar className="h-12 w-12 mb-2 text-green-600" />
                   <h3 className="text-xl font-bold text-green-800">
-                    Flexible Dates
+                    Lịch trình linh hoạt
                   </h3>
                   <p className="text-sm text-green-700 text-center">
-                    Choose the best travel dates with our flexible calendar
-                    view.
+                    Tìm kiếm chuyến bay dựa trên lịch trình của bạn.
                   </p>
                 </CardContent>
               </Card>
@@ -117,10 +115,10 @@ export function Landing() {
                 <CardContent className="flex flex-col items-center space-y-2 p-6">
                   <CreditCard className="h-12 w-12 mb-2 text-purple-600" />
                   <h3 className="text-xl font-bold text-purple-800">
-                    Secure Booking
+                    Thanh toán an toàn
                   </h3>
                   <p className="text-sm text-purple-700 text-center">
-                    Book with confidence using our secure payment system.
+                    Thanh toán một cách an toàn và bảo mật với nhiều phương thức thanh toán khác nhau.
                   </p>
                 </CardContent>
               </Card>
@@ -129,11 +127,10 @@ export function Landing() {
                 <CardContent className="flex flex-col items-center space-y-2 p-6">
                   <Star className="h-12 w-12 mb-2 text-red-600" />
                   <h3 className="text-xl font-bold text-red-800">
-                    24/7 Support
+                    Hỗ trợ 24/7 
                   </h3>
                   <p className="text-sm text-red-700 text-center">
-                    Get assistance anytime with our round-the-clock customer
-                    support.
+                    Hỗ trợ khách hàng 24/7 để giải đáp mọi thắc mắc của bạn.
                   </p>
                 </CardContent>
               </Card>
@@ -143,7 +140,7 @@ export function Landing() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-50">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-orange-800">
-              Popular Destinations
+               Những điểm đến được nhiều người lựa chọn
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {cities.map(({ city, icon, image }) => (
@@ -167,7 +164,7 @@ export function Landing() {
                         <span className="ml-2">{city}</span>
                       </h3>
                       <Button className="bg-white text-sky-800 hover:bg-sky-100">
-                        Explore Flights
+                        Khám phá chuyến bay
                       </Button>
                     </div>
                   </div>
@@ -179,7 +176,7 @@ export function Landing() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-sky-100">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-sky-800">
-              What Our Travelers Say
+                Đánh giá từ khách hàng
             </h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {[
@@ -219,14 +216,16 @@ export function Landing() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-sky-700">"{testimonial.text}"</p>
+                    <p className="text-sky-700">{testimonial.text}</p>
                   </CardContent>
+                  
                 </Card>
               ))}
             </div>
           </div>
         </section>
       </main>
+
       <footer className="w-full py-6 bg-sky-800 text-white">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
@@ -299,7 +298,7 @@ export function Landing() {
           </div>
           <div className="mt-8 text-center">
             <p className="text-sm text-sky-200">
-              © 2023 SkyBooker. All rights reserved.
+              © 2024 SparrowAirlines. All rights reserved.
             </p>
           </div>
         </div>
