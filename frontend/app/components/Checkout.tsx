@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -7,11 +7,9 @@ import { format } from "date-fns";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Plane,
-  Search,
   Sun,
   Moon,
   ArrowLeft,
-  PlaneTakeoff,
   CalendarIcon,
 } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
@@ -23,7 +21,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
-
+import logo from "../../public/Images/logo/logo.png";
 interface Flight {
   id: string;
   airline: string;
@@ -63,12 +61,12 @@ export function Checkout() {
   }, []);
 
   const popularJourneys = [
-    { source: "New York", destination: "London" },
-    { source: "Tokyo", destination: "Paris" },
-    { source: "Dubai", destination: "Singapore" },
-    { source: "Los Angeles", destination: "Sydney" },
-    { source: "Mumbai", destination: "Bangkok" },
-    { source: "Berlin", destination: "Rome" },
+    { source: "Hà Nội", destination: "Tokyo" },
+    { source: "Hà Nội", destination: "Đà Nẵng" },
+    { source: "Hồ Chí Minh", destination: "Phú Quốc" },
+    { source: "Hà Nội", destination: "Bangkok" },
+    { source: "Hà Nội", destination: "Phú Quốc" },
+    { source: "Hồ Chí Minh", destination: "Thượng Hải" },
   ];
 
 
@@ -197,13 +195,13 @@ export function Checkout() {
         <header className="text-center mb-8 flex justify-between items-center">
           <div>
             <div className="flex items-center">
-              <PlaneTakeoff className="h-10 w-10 text-sky-500 mr-2" />
+            <Image src={logo} alt="logo" width={50} height={50} />
               <h1
                 className={`text-5xl font-bold mb-2 ${
                   isDarkMode ? "text-blue-400" : "text-blue-600"
                 }`}
               >
-                SkyBooker
+                SparrowAirlines
               </h1>
             </div>
             <p
@@ -211,7 +209,7 @@ export function Checkout() {
                 isDarkMode ? "text-zinc-400 text-lg" : "text-zinc-600 text-lg"
               }
             >
-              Find your perfect flight
+               Tìm kiếm chuyến bay thích hợp cho bạn
             </p>
           </div>
           <div className="flex items-center space-x-2">
@@ -228,14 +226,14 @@ export function Checkout() {
             >
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">
-                  Search Flights
+                  Tìm kiếm chuyến bay
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <div className="flex-1 relative">
                     <Input
-                      placeholder="From"
+                      placeholder="Điểm xuất phát"
                       value={source}
                       onChange={(e) => handleSrcDest(e.target.value, true)}
                       className={isDarkMode ? "bg-gray-700 text-white" : ""}
@@ -269,7 +267,7 @@ export function Checkout() {
                   </div>
                   <div className="flex-1 relative">
                     <Input
-                      placeholder="To"
+                      placeholder="Điểm đến"
                       value={destination}
                       onChange={(e) => handleSrcDest(e.target.value, false)}
                       className={isDarkMode ? "bg-gray-700 text-white" : ""}
@@ -314,7 +312,7 @@ export function Checkout() {
                         }`}
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {date ? format(date, "PPP") : <span>Pick a date</span>}
+                        {date ? format(date, "PPP") : <span>Ngày khởi hành</span>}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent
@@ -338,7 +336,7 @@ export function Checkout() {
                   }`}
                   onClick={handleSearch}
                 >
-                  Search Flights
+                   Tìm kiếm
                 </Button>
               </CardContent>
             </Card>
@@ -349,7 +347,7 @@ export function Checkout() {
                   isDarkMode ? "text-zinc-200" : "text-zinc-800"
                 }`}
               >
-                Popular Journeys
+                Chuyến bay phổ biến
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {popularJourneys.map((journey, index) => (
@@ -379,7 +377,7 @@ export function Checkout() {
                         isDarkMode ? "text-zinc-400" : "text-zinc-500"
                       }`}
                     >
-                      Select
+                       Lựa chọn
                     </span>
                   </Button>
                 ))}
@@ -398,7 +396,7 @@ export function Checkout() {
               <CardTitle
                 className={isDarkMode ? "text-zinc-100" : "text-zinc-900"}
               >
-                Flight Results: {source} to {destination}
+               Kết quả tìm kiếm: {source} to {destination}
               </CardTitle>
               <Button
                 variant="outline"
@@ -406,7 +404,7 @@ export function Checkout() {
                 className={isDarkMode ? "text-zinc-600" : "text-zinc-800"}
               >
                 <ArrowLeft className="w-5 h-5 mr-2 " />
-                Back to Search
+                 Quay lại tìm kiếm
               </Button>
             </CardHeader>
             <CardContent>
@@ -455,9 +453,9 @@ export function Checkout() {
                           }`}
                         >
                           {isBooking ? (
-                            <span>Booking...</span>
+                            <span> Đang đặt...</span>
                           ) : (
-                            <span>Book Now</span>
+                            <span>Đặt ngay bây giờ</span>
                           )}
                         </Button>
                       </div>

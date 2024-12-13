@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  PlaneTakeoff,
   Search,
   Calendar,
   CreditCard,
@@ -22,13 +21,13 @@ import ParisImage from "../../public/Images/Paris.jpg";
 import TokyoImage from "../../public/Images/Tokyo.jpg";
 import { useRouter } from "next/navigation";
 export function Landing() {
-    const router = useRouter();
+  const router = useRouter();
 
-    const searchHandler = () => {
-      console.log("Go to checkout page")
-        router.push(`/checkout`);
-    };
-      
+  const searchHandler = () => {
+    console.log("Go to checkout page")
+    router.push(`/checkout`);
+  };
+
 
   const cities = [
     {
@@ -46,20 +45,20 @@ export function Landing() {
       icon: <MapPin className="h-8 w-8 text-red-500" />,
       image: NewYorkImage,
     },
-    
+
   ];
   return (
     <div className="flex flex-col min-h-screen bg-sky-50">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-sky-400 to-sky-300">
-          <div className="container px-4 md:px-6 relative">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-yellow-300 to-sky-300">
+          <div className="w-full h-full flex items-center justify-center px-4">
             <div className="flex flex-col items-center space-y-4 text-center text-white">
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
-                Bay cùng cảm xúc, đến cùng niềm vui
+                  Bay cùng cảm xúc, đến cùng niềm vui
                 </h1>
                 <p className="mx-auto max-w-[700px] text-xl md:text-2xl text-sky-100">
-                 Tự tin khám phá thế giới với những chuyến bay thuận tiện, giá cả hợp lý của  Sparrow Airlines
+                  Tự tin khám phá thế giới với những chuyến bay thuận tiện, giá cả hợp lý của Sparrow Airlines
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
@@ -74,32 +73,34 @@ export function Landing() {
                     onClick={searchHandler}
                     className="bg-orange-500 hover:bg-orange-600 text-white"
                   >
-                     Tìm kiếm chuyến bay
+                    Tìm kiếm chuyến bay
                   </Button>
                 </form>
               </div>
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container px-4 md:px-6">
+
+
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-white flex items-center justify-center">
+          <div className="w-full max-w-7xl px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-sky-800">
-               Tại sao Sparrow Airlines là lựa chọn hàng đầu của bạn?
+              Tại sao Sparrow Airlines là lựa chọn hàng đầu của bạn?
             </h2>
             <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
-              <Card className="bg-yellow-100 border-yellow-200 hover:scale-105 hover:shadow-lg transition-transform duration-300">
+              <Card className="bg-purple-100 border-yellow-200 hover:scale-105 hover:shadow-lg transition-transform duration-300">
                 <CardContent className="flex flex-col items-center space-y-2 p-6">
                   <Search className="h-12 w-12 mb-2 text-yellow-600" />
                   <h3 className="text-xl font-bold text-yellow-800">
-                     Tìm kiếm dễ dàng
+                    Tìm kiếm dễ dàng
                   </h3>
                   <p className="text-sm text-yellow-700 text-center">
-                     Tìm kiếm chuyến bay đến mọi nơi một cách nhanh chóng và dễ dàng.
+                    Tìm kiếm chuyến bay đến mọi nơi một cách nhanh chóng và dễ dàng.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-green-100 border-green-200 hover:scale-105 hover:shadow-lg transition-transform duration-300">
+              <Card className="bg-red-100 border-green-200 hover:scale-105 hover:shadow-lg transition-transform duration-300">
                 <CardContent className="flex flex-col items-center space-y-2 p-6">
                   <Calendar className="h-12 w-12 mb-2 text-green-600" />
                   <h3 className="text-xl font-bold text-green-800">
@@ -111,7 +112,7 @@ export function Landing() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-purple-100 border-purple-200 hover:scale-105 hover:shadow-lg transition-transform duration-300">
+              <Card className="bg-yellow-100 border-purple-200 hover:scale-105 hover:shadow-lg transition-transform duration-300">
                 <CardContent className="flex flex-col items-center space-y-2 p-6">
                   <CreditCard className="h-12 w-12 mb-2 text-purple-600" />
                   <h3 className="text-xl font-bold text-purple-800">
@@ -123,11 +124,11 @@ export function Landing() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-red-100 border-red-200 hover:scale-105 hover:shadow-lg transition-transform duration-300">
+              <Card className="bg-green-100 border-red-200 hover:scale-105 hover:shadow-lg transition-transform duration-300">
                 <CardContent className="flex flex-col items-center space-y-2 p-6">
                   <Star className="h-12 w-12 mb-2 text-red-600" />
                   <h3 className="text-xl font-bold text-red-800">
-                    Hỗ trợ 24/7 
+                    Hỗ trợ 24/7
                   </h3>
                   <p className="text-sm text-red-700 text-center">
                     Hỗ trợ khách hàng 24/7 để giải đáp mọi thắc mắc của bạn.
@@ -137,10 +138,12 @@ export function Landing() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-50">
-          <div className="container px-4 md:px-6">
+
+
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-50 flex items-center justify-center">
+          <div className="w-full max-w-7xl px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-orange-800">
-               Những điểm đến được nhiều người lựa chọn
+              Những điểm đến được nhiều người lựa chọn
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {cities.map(({ city, icon, image }) => (
@@ -151,7 +154,7 @@ export function Landing() {
                   <Image
                     alt={`${city} skyline`}
                     className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                    src={image} // Using imported image here
+                    src={image}
                     layout="responsive"
                     width={600}
                     height={400}
@@ -173,27 +176,29 @@ export function Landing() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-sky-100">
-          <div className="container px-4 md:px-6">
+
+
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-sky-100 flex items-center justify-center">
+          <div className="w-full max-w-7xl px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-sky-800">
-                Đánh giá từ khách hàng
+              Đánh giá từ khách hàng
             </h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  name: "Alex Johnson",
-                  text: "SkyBooker made booking my vacation a breeze. Great deals and excellent service!",
-                  avatar: "A",
+                  name: "Huy Đạt",
+                  text: "SparrowAirlines là lựa chọn tuyệt vời cho kỳ nghỉ dưỡng của chúng tôi",
+                  avatar: "Đ",
                 },
                 {
-                  name: "Sarah Lee",
-                  text: "I love the flexible date feature. It helped me save a lot on my recent business trip.",
-                  avatar: "S",
+                  name: "Đức",
+                  text: "Chất lượng mỗi chuyến bay rất tuyệt vời, dịch vụ tốt",
+                  avatar: "Đ",
                 },
                 {
-                  name: "Mike Brown",
-                  text: "The customer support is top-notch. They helped me rebook when my plans changed last minute.",
-                  avatar: "M",
+                  name: "Dũng",
+                  text: "Ghế ngồi rất thoải mái, chất lượng đồ ăn tuyệt hảo.",
+                  avatar: "D",
                 },
               ].map((testimonial, index) => (
                 <Card
@@ -206,9 +211,7 @@ export function Landing() {
                         {testimonial.avatar}
                       </div>
                       <div>
-                        <p className="font-semibold text-sky-800">
-                          {testimonial.name}
-                        </p>
+                        <p className="font-semibold text-sky-800">{testimonial.name}</p>
                         <div className="flex text-yellow-400">
                           {[...Array(5)].map((_, i) => (
                             <Star key={i} className="h-4 w-4 fill-current" />
@@ -218,19 +221,19 @@ export function Landing() {
                     </div>
                     <p className="text-sky-700">{testimonial.text}</p>
                   </CardContent>
-                  
                 </Card>
               ))}
             </div>
           </div>
         </section>
+
       </main>
 
       <footer className="w-full py-6 bg-sky-800 text-white">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
             <div>
-              <h3 className="text-lg font-semibold mb-2">About SkyBooker</h3>
+              <h3 className="text-lg font-semibold mb-2">About SparrowAirlines</h3>
               <ul className="space-y-2">
                 <li>
                   <Link href="#" className="hover:underline">

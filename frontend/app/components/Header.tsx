@@ -24,8 +24,8 @@ export default function Header() {
   };
 
   return (
-    <header className="px-4 lg:px-6 h-16 flex items-center bg-sky-500 text-white">
-      <Link className="flex items-center justify-center" href="#">
+    <header className="px-4 lg:px-6 h-16 flex items-center bg-red-500 text-white">
+      <Link className="flex items-center justify-center" href="/">
       <Image src={logo} alt="logo" width={50} height={50} />
       
         <span className="text-xl font-bold">Sparrow Airlines</span>
@@ -35,7 +35,7 @@ export default function Header() {
           className="text-sm font-medium hover:underline underline-offset-4"
           href="/ticket"
         >
-          Upcoming Journey
+          Chuyến đi sắp tới
         </Link>
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"

@@ -12,7 +12,8 @@ import { useRouter } from "next/navigation"
 import { useSetRecoilState } from "recoil"
 import { userAtom } from "../atoms"
 import { useToast } from "@/hooks/use-toast"
-
+import Image from "next/image";
+import logo from "../../public/Images/logo/logo.png";
 
 const TabContent = ({ children }: { children: React.ReactNode }) => (
   <div className="w-full overflow-hidden relative h-full rounded-2xl p-8 text-white bg-gradient-to-br from-sky-400 to-indigo-900">
@@ -78,16 +79,17 @@ export function Auth() {
       const data = await response.json();
       // Check if the request was successful
       if (response.ok) {
-        console.log('Signup successful:')
+        console.log('Đăng ký thành công:')
         setUserEmail(data.email)
         router.push(`/checkout`)
         // Redirect to the dashboard or another page if needed
       } else {
-        console.error('Signup failed:')
+        console.error('Đăng ký thất bại:')
+        
         // Handle error message
       }
     } catch (error) {
-      console.error('Error during signup:', error)
+      console.error('Đã có lỗi xảy ra trong khi đăng ký:', error)
       toast({
         title: "Uh-oh! 🚧",
         description: "Something's broken in the background. We’re on it!",
@@ -116,7 +118,7 @@ export function Auth() {
       const data = await response.json();
       // Check if the request was successful
       if (response.ok) {
-        console.log('Login successful:')
+        console.log('Đăng nhập thành công successful:')
         setUserEmail(data.email)
         router.push('/checkout')
         // Perform further actions, like redirecting to a dashboard
@@ -125,11 +127,11 @@ export function Auth() {
           title: "Uh-oh! 🚧",
           description: "Something's broken in the background. We’re on it!",
         });
-        console.error('Login failed:')
+        console.error('Đăng nhập thất bại')
         // Handle error message
       }
     } catch (error) {
-      console.error('Error during login:', error)
+      console.error('Có lỗi xảy ra trong quá trình đăng nhập:', error)
     } finally {
       setIsLoading(false)
     }
@@ -148,10 +150,10 @@ export function Auth() {
       value: "signup",
       content: (
         <TabContent>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Start Your Journey</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Bay cùng SparrowAirline</h2>
           <form onSubmit={signupHandler} className="space-y-4">
           <div>
-              <Label htmlFor="text" className="text-white">Name</Label>
+              <Label htmlFor="text" className="text-white">Tên</Label>
               <Input
                 id="name"
                 type="text"
@@ -175,7 +177,7 @@ export function Auth() {
               />
             </div>
             <div>
-              <Label htmlFor="password" className="text-white">Password</Label>
+              <Label htmlFor="password" className="text-white">Mật khẩu</Label>
               <Input
                 id="password"
                 type="password"
@@ -188,9 +190,9 @@ export function Auth() {
             <div className="flex items-center space-x-2">
               <Checkbox id="terms" required />
               <Label htmlFor="terms" className="text-sm text-white">
-                I agree to the{" "}
+                 Đồng ý với {" "}
                 <a href="#" className="underline">
-                  Terms and Conditions
+                  Điều khoản và quy định
                 </a>
               </Label>
             </div>
@@ -199,7 +201,7 @@ export function Auth() {
               disabled={isLoading}
               className="w-full bg-white text-indigo-900 hover:bg-indigo-100"
             >
-              {isLoading ? "Preparing for Takeoff..." : "Join SkyJourney"}
+              {isLoading ? "Preparing for Takeoff..." : "Đăng ký"}
             </Button>
           </form>
           <div className="mt-4 text-center">
@@ -208,7 +210,7 @@ export function Auth() {
                 <span className="w-full border-t border-white/30" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-indigo-900 px-2 text-white">Or continue with</span>
+                <span className="bg-indigo-900 px-2 text-white">Hoặc tiếp tục với</span>
               </div>
             </div>
             <Button
@@ -228,7 +230,7 @@ export function Auth() {
                   ></path>
                 </svg>
               )}
-              {isGoogleLoading ? "Connecting..." : "Continue with Google"}
+              {isGoogleLoading ? "Connecting..." : "Tiếp tục với tài khoản Google"}
             </Button>
           </div>
         </TabContent>
@@ -239,7 +241,7 @@ export function Auth() {
       value: "login",
       content: (
         <TabContent>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Welcome Back, Explorer</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Chào mừng quý khách đã quay trở lại</h2>
           <form onSubmit={loginHandler} className="space-y-4">
             <div>
               <Label htmlFor="email" className="text-white">Email</Label>
@@ -254,7 +256,7 @@ export function Auth() {
               />
             </div>
             <div>
-              <Label htmlFor="password" className="text-white">Password</Label>
+              <Label htmlFor="password" className="text-white">Mật khẩu</Label>
               <Input
                 id="password"
                 type="password"
@@ -268,11 +270,11 @@ export function Auth() {
               <div className="flex items-center space-x-2">
                 <Checkbox id="remember" />
                 <Label htmlFor="remember" className="text-sm text-white">
-                  Remember me
+                  Ghi nhớ tôi
                 </Label>
               </div>
               <a href="#" className="text-sm text-white underline">
-                Forgot password?
+                 Quên mật khẩu?
               </a>
             </div>
             <Button
@@ -280,7 +282,7 @@ export function Auth() {
               disabled={isLoading}
               className="w-full bg-white text-indigo-900 hover:bg-indigo-100"
             >
-              {isLoading ? "Boarding..." : "Log in to SkyJourney"}
+              {isLoading ? "Boarding..." : "Đăng nhập"}
             </Button>
           </form>
         </TabContent>
@@ -293,8 +295,8 @@ export function Auth() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-indigo-900 flex items-center justify-center">
-            <Plane className="h-8 w-8 mr-2 rotate-45" />
-            SkyBooker
+          <Image src= {logo} alt="logo" width={50} height={50} />
+            SparrowAirlines
           </h1>
           <p className="text-indigo-700">Your passport to the skies</p>
         </div>

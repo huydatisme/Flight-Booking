@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PlaneTakeoff, Clock } from "lucide-react";
-
+import {  Clock } from "lucide-react";
+import Image from "next/image";
+import logo from "../../public/Images/logo/logo.png";
 type SeatBookingProps = {
   flightId: string;
 };
@@ -110,8 +111,8 @@ export function SeatSelect({ flightId }: SeatBookingProps) {
   return (
     <div className="min-h-screen bg-zinc-900 p-4">
       <header className="flex justify-center items-center mb-6">
-        <PlaneTakeoff className="h-8 w-8 text-sky-500 mr-2" />
-        <span className="text-2xl font-bold text-sky-700">SkyBooker</span>
+      <Image src={logo} alt="logo" width={50} height={50} />
+        <span className="text-2xl font-bold text-sky-700">SparrowAirlines</span>
       </header>
 
       <Card className="max-w-4xl mx-auto mb-8">

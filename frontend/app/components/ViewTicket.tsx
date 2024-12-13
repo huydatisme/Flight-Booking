@@ -7,7 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { PlaneTakeoff, Sun, Moon, Search, ArrowRight, Calendar, Clock, Users, ArrowLeft } from "lucide-react"
 import { Switch } from "@/components/ui/switch"
 import { motion, AnimatePresence } from "framer-motion"
-
+import Image from "next/image";
+import logo from "../../public/Images/logo/logo.png";
 interface Passenger {
   name: string
   email: string
@@ -143,8 +144,8 @@ export function ViewTicket() {
       <div className="max-w-4xl mx-auto">
         <header className="flex justify-between items-center mb-8">
           <div className="flex items-center">
-            <PlaneTakeoff className="h-10 w-10 text-sky-500 mr-2" />
-            <h1 className={`text-3xl font-bold ${isDarkMode ? 'text-sky-400' : 'text-sky-600'}`}>SkyBooker</h1>
+          <Image src={logo} alt="logo" width={50} height={50} />
+            <h1 className={`text-3xl font-bold ${isDarkMode ? 'text-sky-400' : 'text-sky-600'}`}>SparrowAirlines</h1>
           </div>
           <div className="flex items-center space-x-2">
             <Sun className="h-4 w-4" />
